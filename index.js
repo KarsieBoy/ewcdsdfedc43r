@@ -7,7 +7,7 @@ client.on('ready', async() => {
     client.user.setPresence({
         status: "dnd",
         game: { 
-        type: "PLAYING" 
+        type: "WATCHING" 
         }
     }
     );
@@ -50,4 +50,5 @@ client.on("guildMemberRemove", member => {
 })
 
 
-client.login(process.env.token);
+
+client.login(config.token);

@@ -35,11 +35,13 @@ exports.run = async(client, msg, args) => {
     var embed = new Discord.MessageEmbed()
     .setThumbnail("https://cdn.discordapp.com/avatars/741599608056184834/60aaa4a08fc49b080a53accf25ff3058.webp?size=128")
     .setColor('#b30000')
-    .setTitle('Je bent voor altijd verbannen van Steakland :(')
-	.setURL('https://steakland.nl/')
+    .setAuthor('Je bent verbannen van de Steakland discord-serverㅤㅤㅤ')
+    .addFields({ name: "Door:", value: msg.author.username, inline: true })
     .addFields({ name: "Reden:", value: reason, inline: true })
-    .addFields({ name: "Door:", value: msg.author, inline: true })
     .addFields({ name: "Tijd:", value: "Permanent", inline: true })
+    .addFields({ name: '\u200B', value: '\u200B' })
+    .addFields({ name: "Start Datum:", value: `${currentDateAndTime=new Date().toLocaleString()}`, inline: true })
+    .addFields({ name: "Eind Datum:", value: "Nooit", inline: true })
 
     try {
         await user.send(embed);
