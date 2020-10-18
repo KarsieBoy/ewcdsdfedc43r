@@ -1,7 +1,7 @@
 var Discord = require('discord.js');
 
 exports.run = async(client, msg, args) => {
-    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.reply('Alleen staff kan dit doen.');
+    if(!msg.member.hasPermission('MANAGE_MESSAGES')) return;
 
     var user = msg.mentions.users.first();
     if(!user) return msg.reply('Geef aub een gebruiker op.');
@@ -51,5 +51,6 @@ exports.run = async(client, msg, args) => {
 
     msg.guild.members.ban(user); 
 
-    msg.channel.send(`**${user}** is verbannen door **${msg.author}**!`);
+    msg.delete();
+    //msg.channel.send(`**${user}** is verbannen door **${msg.author}**!`);
 }
