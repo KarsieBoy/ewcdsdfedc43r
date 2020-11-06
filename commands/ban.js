@@ -21,8 +21,7 @@ exports.run = async(client, msg, args) => {
     var reason = args.splice(1).join(' ');
     if(!reason) return msg.reply('Geef aub een reden op.');
 
-    var channel = msg.guild.channels.cache.find(c => c.name === 'discord-logs');
-
+    var channel = guild.channels.cache.get('728299827523485797');
     var log = new Discord.MessageEmbed()
     .setTitle('Gebruiker verbannen')
     .setColor('#b30000')
@@ -30,7 +29,7 @@ exports.run = async(client, msg, args) => {
     .addField('User:', user, true)
     .addField('Door:', msg.author, true)
     .addField('Reden:', reason)
-    channel.send(log);
+    msg.channel.send(log);
 
     var embed = new Discord.MessageEmbed()
     .setThumbnail("https://cdn.discordapp.com/avatars/741599608056184834/60aaa4a08fc49b080a53accf25ff3058.webp?size=128")
@@ -49,7 +48,12 @@ exports.run = async(client, msg, args) => {
         console.warn(err);
     }
 
-    msg.guild.members.ban(user); 
+    let banReason = args.join(" ").slice(22);
+if (!banReason) {
+  banReason = "None"
+}
+
+User.ban({reason: banReason})
 
     msg.delete();
     //msg.channel.send(`**${user}** is verbannen door **${msg.author}**!`);
