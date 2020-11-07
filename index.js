@@ -37,7 +37,7 @@ client.on("guildMemberAdd", member =>{
     if(!role) return;
     member.roles.add(role);
 
-    var channel = member.guild.channels.cache.get('728299827523485797')
+    var channel = member.guild.channels.cache.get('728299827523485797');
     if(!channel) return;
 
     channel.send(`**${member} is de server gejoined.**`);
@@ -45,8 +45,8 @@ client.on("guildMemberAdd", member =>{
 })
 
 client.on("guildMemberRemove", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'discord-logs')
-    welcomeChannel.send (`**${member} heeft de server verlaten.**`)
+    const welcomeChannel = member.guild.channels.cache.get('728299827523485797');
+    welcomeChannel.send (`**${member} heeft de server verlaten.**`);
 })
 
 
