@@ -1,17 +1,6 @@
 var Discord = require('discord.js');
 
 exports.run = async(client, msg, args) => {
-/*    var value = [
-        'Ja 100%!',
-        'Nee',
-        'Misschien',
-        'Waarschijnlijk..',
-        'Ik denk van niet',
-        'Nooit!',
-        'Je kan het proberen..',
-        'Jij kiest!',
-    ];
-    */
 
 
     function doMagic8BallVoodoo() {

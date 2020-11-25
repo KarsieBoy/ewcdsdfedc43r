@@ -14,7 +14,7 @@ exports.run = async(client, msg, args) => {
 )
 .addFields(
   { name: 'Leden:', value: `${msg.guild.memberCount}`, inline: true },
-  { name: 'Online:', value: `${msg.guild.members.cache.filter(member => member.presence.status !== "offline").size}`, inline: true },
+  { name: 'Online:', value: `${msg.guild.members.filter(member => member.presence.status !== "offline").size}`, inline: true },
   { name: 'Boosts:', value: `${msg.guild.premiumSubscriptionCount}`, inline: true },
 )
 .addFields(
