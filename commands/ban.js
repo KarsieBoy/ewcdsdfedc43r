@@ -56,5 +56,5 @@ if (!banReason) {
 User.ban({reason: banReason})
 
     msg.delete();
-    //msg.channel.send(`**${user}** is verbannen door **${msg.author}**!`);
+
 }

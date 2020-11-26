@@ -1,6 +1,6 @@
 var config = require('./config.json');
 var Discord = require('discord.js');
-var client = new Discord.Client();
+var client = new Discord.Client({ ws: { intents: Discord.Intents.ALL } });
 
 client.on('ready', async() => {
     console.log('SteakBot is online');
@@ -31,24 +31,18 @@ client.on('message', async(msg) => {
     }
 });
 
-client.on("guildMemberAdd", member =>{
 
+client.on("guildMemberAdd", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'discord-logs');
+    welcomeChannel.send (`**${member} is de server gejoined.**`);
     var role = member.guild.roles.cache.get('709124989558718514');
     if(!role) return;
     member.roles.add(role);
-
-    var channel = member.guild.channels.cache.get('728299827523485797');
-    if(!channel) return;
-
-    channel.send(`**${member} is de server gejoined.**`);
-
 })
 
 client.on("guildMemberRemove", member => {
-    const welcomeChannel = member.guild.channels.cache.get('728299827523485797');
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'discord-logs');
     welcomeChannel.send (`**${member} heeft de server verlaten.**`);
 })
-
-
 
 client.login(process.env.token);
