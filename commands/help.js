@@ -9,9 +9,9 @@ exports.run = async(client, msg, args) => {
 .addFields(
   { name: ':map: Algemene commands:', value: '`!help` `!ping` `!serverinfo` `!avatar` `!invite`', inline: false },
   { name: ':ok_hand: Fun commands:', value: '`!8ball` `!dobbel` `!rps` `!kopofmunt`', inline: false },
-  { name: ':no_entry: Staff commands:', value: '`?ban` `?mute` `?unmute` `?purge` `?lockdown`', inline: false },
+  { name: ':no_entry: Staff commands:', value: '`!ban` `!mute` `!unmute` `!purge` `!lock` `!unlock`', inline: false },
 )
-.setFooter('De bot carl-bot verzorgt de staff commands');
+.setFooter('Werkt de bot niet of slecht? dm KarsieBoy#7238');
 
   msg.channel.send(embed);
 

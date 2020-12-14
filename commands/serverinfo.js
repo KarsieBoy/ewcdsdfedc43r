@@ -10,7 +10,7 @@ exports.run = async(client, msg, args) => {
 .addFields(
   { name: 'Eigenaar:', value: 'KarsieBoy#7238', inline: true },
   { name: 'Regio:', value: `${msg.guild.region}`, inline: true },
-  { name: 'Bots:', value: '1', inline: true },
+  { name: 'Bots:', value: '2', inline: true },
 )
 .addFields(
   { name: 'Leden:', value: `${msg.guild.memberCount}`, inline: true },
@@ -18,8 +18,8 @@ exports.run = async(client, msg, args) => {
   { name: 'Boosts:', value: `${msg.guild.premiumSubscriptionCount}`, inline: true },
 )
 .addFields(
-  { name: 'Tekstkanalen', value: '9', inline: true },
-  { name: 'Spraakkanalen', value: '5', inline: true },
+  { name: 'Tekstkanalen', value: '13', inline: true },
+  { name: 'Spraakkanalen', value: '7', inline: true },
 )
 .addFields(
   { name: 'Gemaakt op:', value: `${msg.member.guild.createdAt.toLocaleString()}`, inline: false },
