@@ -24,7 +24,7 @@ exports.run = async(client, msg, args) => {
 .addFields(
   { name: 'Gemaakt op:', value: `${msg.member.guild.createdAt.toLocaleString()}`, inline: false },
   { name: 'Gejoined op:', value: `${msg.member.joinedAt.toLocaleString()}`, inline: true },
-  { name: 'Rollen:', value: `<@&709132913676910592> <@&709125249496515003> <@&709131676520808530>\n <@&709131677460463628> <@&780875829453258762> <@&748092364865929319> <@&781595378109644900>ㅤ ㅤㅤㅤ  `, inline: false },
+  { name: 'Rollen:', value: `<@&709132913676910592> <@&709125249496515003> <@&709131676520808530>ㅤㅤ ㅤㅤㅤ       <@&709131677460463628> <@&748092364865929319> <@&781595378109644900>`, inline: false },
 )
 
   msg.channel.send(embed);
