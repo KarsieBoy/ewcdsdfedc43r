@@ -18,8 +18,8 @@ exports.run = async(client, msg, args) => {
   { name: 'Boosts:', value: `${msg.guild.premiumSubscriptionCount}`, inline: true },
 )
 .addFields(
-  { name: 'Tekstkanalen', value: `n`, inline: true },
-  { name: 'Spraakkanalen', value: `n`, inline: true },
+  { name: 'Tekstkanalen', value: 'n', inline: true },
+  { name: 'Spraakkanalen', value: 'n', inline: true },
 )
 .addFields(
   { name: 'Gemaakt op:', value: `${msg.member.guild.createdAt.toLocaleString()}`, inline: false },
