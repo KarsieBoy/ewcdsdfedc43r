@@ -25,7 +25,7 @@ exports.run = async(client, msg, args) => {
     var log = new Discord.MessageEmbed()
     .setTitle('Gebruiker verbannen')
     .setColor('#b30000')
-    .setThumbnail("https://cdn.discordapp.com/avatars/741599608056184834/60aaa4a08fc49b080a53accf25ff3058.webp?size=128")
+    .setThumbnail(msg.guild.iconURL())
     .addField('User:', user, true)
     .addField('Door:', msg.author, true)
     .addField('Reden:', reason)

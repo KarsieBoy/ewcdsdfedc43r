@@ -5,12 +5,12 @@ exports.run = async(client, msg, args) => {
   const embed = new Discord.MessageEmbed()
 .setTitle("Server Info")
 .setColor('#b30000')
-.setThumbnail("https://cdn.discordapp.com/avatars/741599608056184834/60aaa4a08fc49b080a53accf25ff3058.webp?size=128")
-.addFields({ name: "ID:", value: "709124624570646591", inline: false })
+.setThumbnail(msg.guild.iconURL())
+.addFields({ name: "ID:", value: `${msg.guild.id}`, inline: false })
 .addFields(
-  { name: 'Eigenaar:', value: 'KarsieBoy#7238', inline: true },
+  { name: 'Eigenaar:', value: `${msg.guild.owner.user.username}`, inline: true },
   { name: 'Regio:', value: `${msg.guild.region}`, inline: true },
-  { name: 'Bots:', value: '2', inline: true },
+  { name: 'Bots:', value: `${msg.guild.members.cache.filter(member => member.user.bot).size}`, inline: true },
 )
 .addFields(
   { name: 'Leden:', value: `${msg.guild.memberCount}`, inline: true },
@@ -18,8 +18,8 @@ exports.run = async(client, msg, args) => {
   { name: 'Boosts:', value: `${msg.guild.premiumSubscriptionCount}`, inline: true },
 )
 .addFields(
-  { name: 'Tekstkanalen', value: '13', inline: true },
-  { name: 'Spraakkanalen', value: '7', inline: true },
+  { name: 'Tekstkanalen', value: `n`, inline: true },
+  { name: 'Spraakkanalen', value: `n`, inline: true },
 )
 .addFields(
   { name: 'Gemaakt op:', value: `${msg.member.guild.createdAt.toLocaleString()}`, inline: false },
