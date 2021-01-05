@@ -1,16 +1,11 @@
 var config = require('./config.json');
 var Discord = require('discord.js');
+const { REPL_MODE_SLOPPY } = require('repl');
 const client = new Discord.Client();
 
 client.on('ready', async() => {
-    console.log('SteakBot is online');
-    client.user.setPresence({
-        status: "dnd",
-        game: { 
-        type: "WATCHING" 
-        }
-    }
-    );
+    console.log('Bot is online');
+    client.user.setActivity("Goede voornemens", { type: "WATCHING" });
     });
 
 client.on('message', async(msg) => {
@@ -27,7 +22,8 @@ client.on('message', async(msg) => {
         var file = require(`./commands/${cmd}.js`);
         file.run(client, msg, args);
     } catch(err) {
+        msg.channel.send("Dit commando bestaat niet!");
     }
 });
 
-client.login(process.env.token);
+client.login(proccess.env.token);

@@ -4,7 +4,7 @@ exports.run = async(client, msg, args) => {
 
 
     function doMagic8BallVoodoo() {
-        var rand = ['**Ja 100%**', '**Nee!**', '**Misschien..**', '**Ik denk van niet**', '**NOOIT!!**'];
+        var rand = ['**Ja**', '**Nee**', '**Geen idee**'];
     
         return rand[Math.floor(Math.random()*rand.length)];
     }

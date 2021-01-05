@@ -7,13 +7,16 @@ exports.run = async(client, msg, args) => {
     await msg.channel.overwritePermissions([
 
         {
-            id: msg.guild.roles.cache.find(r => r.name == "🔱 • Spelers").id,
+            id: msg.guild.roles.cache.find(r => r.name == "👪 • Member").id,
             allow: ['SEND_MESSAGES']
         }
 
     ]);
 
 
-        msg.delete();
+    const embed = new Discord.MessageEmbed()
+    .setTitle(`Dit kanaal is geopent door ${msg.author.username}!`)
+    .setColor('#ff0000')
+    msg.channel.send(embed);
 
 }

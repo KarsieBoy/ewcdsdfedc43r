@@ -11,7 +11,7 @@ exports.run = async(client, msg, args) => {
   { name: ':ok_hand: Fun commands:', value: '`!8ball` `!dobbel` `!rps` `!kopofmunt`', inline: false },
   { name: ':no_entry: Staff commands:', value: '`!ban` `!mute` `!unmute` `!purge` `!lock` `!unlock`', inline: false },
 )
-.setFooter('Werkt de bot niet of slecht? dm KarsieBoy#7238');
+.setFooter('Dit bericht is niet meer correct!');
 
   msg.channel.send(embed);
 
