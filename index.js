@@ -26,4 +26,4 @@ client.on('message', async(msg) => {
     }
 });
 
-client.login(proccess.env.token);
+client.login(process.env.token);
