@@ -45,7 +45,7 @@ if (!msg.member.permissions.has("BAN_MEMBERS")) {
 if (!msg.guild.me.permissions.has("BAN_MEMBERS")) {
   let botnopermsembed = new Discord.MessageEmbed()
   .setTitle("Ik heb geen premissions om mensen te bannen.")
-    .setColor("#ff0000");
+  .setColor("#ff0000");
     msg.channel.send(botnopermsembed);
 
   return;
@@ -57,7 +57,7 @@ const logembed = new Discord.MessageEmbed()
     .setTitle('Gebruiker verbannen')
     .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setColor('#ff0000')
-    .addField('User:', banned, true)
+    .addFields({ name: 'User:', value: `${banned} (${banned.id})`, inline: true })
     .addField('Door:', msg.author, true)
     .addField('Reden:', reason)
     client.channels.cache.get('728299827523485797').send(logembed);
@@ -65,8 +65,8 @@ const logembed = new Discord.MessageEmbed()
 var unbanembed = new Discord.MessageEmbed()
 .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 2048 }))
 .setColor('#ff0000')
-.setAuthor('Je bent verbannen van SteakLand!')
-.addFields({ name: 'Wil je een unban?', value: `Vraag via ${website} je unban aan.`, inline: true })
+.setAuthor('Je bent verbannen van Anime Hangout NL!')
+.addFields({ name: 'Wil je een unban?', value: `Vraag via https://AnimeHangout.nl/ je unban aan.`, inline: true })
 .addFields({ name: 'Reden:', value: reason, inline: true })
 
 try {
