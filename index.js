@@ -22,8 +22,17 @@ client.on('message', async(msg) => {
         var file = require(`./commands/${cmd}.js`);
         file.run(client, msg, args);
     } catch(err) {
-        msg.channel.send("Dit commando bestaat niet!");
+        msg.react('❓');
     }
 });
+
+client.on("guildMemberAdd", member => {
+
+    const logembed = new Discord.MessageEmbed()
+    .setAuthor(`Welkom op de server ${member.user.username}!`, `${member.user.displayAvatarURL({ dynamic: true, size: 2048 })}`)
+    .setDescription('Neem een kijkje in <#799349858141864036> om te kijken hoe je geverifieerd kan worden! en terwijl je geverifieerd word kan je de <#793147031984013362> lezen.')
+    .setColor('#ff6600')
+    client.channels.cache.get('789877967534293023').send(logembed);
+})
 
 client.login(process.env.token);

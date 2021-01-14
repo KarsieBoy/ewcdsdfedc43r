@@ -15,7 +15,7 @@ exports.run = async(client, msg, args) => {
 
     const embed = new Discord.MessageEmbed()
     .setTitle(`Dit kanaal is gelockt door ${msg.author.username}!`)
-    .setColor('#ff0000')
+    .setColor('#ff6600')
     msg.channel.send(embed);
 
 }

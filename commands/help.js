@@ -4,7 +4,7 @@ exports.run = async(client, msg, args) => {
 
   const embed = new Discord.MessageEmbed()
 .setTitle("Commands")
-.setColor('#b30000')
+.setColor('#ff6600')
 .setThumbnail(msg.guild.iconURL())
 .addFields(
   { name: ':map: Algemene commands:', value: '`!help` `!ping` `!serverinfo` `!avatar` `!invite`', inline: false },
