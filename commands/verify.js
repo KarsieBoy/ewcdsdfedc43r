@@ -7,4 +7,6 @@ exports.run = async(client, msg, args, guild) => {
         let verify = msg.guild.roles.cache.find(role => role.id == "781595378109644900");
         member.roles.add(verify)
 
+        client.channels.cache.get('793211252679770132').send(`Welkom op de server ${member}`);
+
 }
