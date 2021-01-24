@@ -27,6 +27,8 @@ client.on('message', async(msg) => {
 });
 
 client.on("guildMemberAdd", member => {
+	
+	client.channels.cache.get('789877967534293023').send(`${member}`);
 
     const logembed = new Discord.MessageEmbed()
     .setAuthor(`Welkom op de server ${member.user.username}!`, `${member.user.displayAvatarURL({ dynamic: true, size: 2048 })}`)
